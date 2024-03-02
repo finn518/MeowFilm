@@ -1,0 +1,487 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+  nav {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 0.3rem;
+      margin: 0.5rem;
+      font-size: small;
+      align-items: baseline;
+      color: rgb(255, 255, 255);
+  }
+
+  nav h3{
+    margin: 1rem;
+    padding: 0.5rem;
+  }
+
+  nav ul {
+      margin: 1rem;
+      padding: 0.5rem;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+      gap: 5rem;
+  }
+
+  nav li {
+      list-style: none;
+  }
+
+  a {
+      text-decoration: none;
+      color: rgb(255, 255, 255);
+  }
+
+  nav a:hover {
+      color: red;
+  }
+
+  .menu-icon {
+    margin: 1rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+
+  hr{
+    margin: 2rem 0;
+  }
+
+  .menu-icon{
+      display: none;
+  }
+
+  .Main {
+      margin: 2rem;
+  }
+
+  .movie-filter h2{
+      color: rgb(255, 255, 255);
+  }
+
+  .card-container{
+      width: 200px;
+      margin: 0.5rem;
+      padding: 1rem;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+  }
+
+  .movie-content, .cast-details, .companies-details {
+      margin: 2rem 0;
+      display: flex;
+      flex-direction: row;
+      overflow: auto;
+      width: auto;
+  }
+
+  .companies-details a{
+    text-align: center;
+  }
+
+.cast-details a,
+.companies-details a {
+  pointer-events: none;
+}
+
+  .companies-details .card-container {
+    justify-content: space-between;
+  }
+
+  .card-container img{
+      border-radius: 1rem;
+      width: 150px;
+      align-self: center;
+  }
+
+  .card-content{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+  }
+
+  .card-content a{
+    font-weight: 700;
+  }
+
+  .movie-content .card-content a:hover{
+    color: red;
+  }
+
+  .card-content i {
+    font-weight: 300;
+    color: white;
+  }
+
+  .movie-filter{
+      margin: 0.5rem;
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+  }
+
+  .movie-btn{
+      background-color: white;
+      color: rgb(0, 0, 0);
+      font-size: 0.6rem;
+      font-weight: 700;
+  }
+
+  .movie-btn button {
+    border-radius: 0rem;
+  }
+
+  .movie-action{
+        border: 2px solid red;
+        border-radius: 2rem;
+        background-color: white;
+  }
+
+  .active{
+      background-color: red;
+      color: white;
+      border-radius: 3rem;
+  }
+
+  .image-container {
+    position: relative;
+    height: 90vh;
+    background-size: cover;
+    background-position: top;
+    display: flex;
+    color: #ffffff;
+    text-align: left;
+    opacity: 0.8;
+    transition: background-image 0.5s ease-in-out;
+}
+
+.image-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    align-self: flex-end;
+    max-width: 800px;
+    padding: 4.5em;
+    z-index: 2;
+    transition: opacity 0.5s ease-in-out;
+}
+
+  .genre-and-rating {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 1.5em;
+  }
+
+  .genre {
+    display: flex;
+    flex-direction: row;
+    gap: 0.8em;
+  }
+
+  .title {
+    margin: 0;
+    padding: 0;
+    width: 400px;
+    height: 2rem;
+    font-size: 2rem;
+  }
+
+  .desc {
+    margin: 0;
+    padding: 0;
+    font-size: 0.8rem;
+    width: 400px;
+    height: 70px;
+  }
+
+  .content h2 {
+    color: white;
+  }
+
+  button {
+    width: 6rem;
+    display: inline-block;
+    padding: 0.5rem;
+    font-size: 1rem;
+    text-decoration: none;
+    color: #fff;
+    background-color: #3498db;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 3rem;
+  }
+
+  .favorite {
+    background-color: red;
+    box-shadow: rgba(40, 40, 40, 0.56) 0px 22px 70px 4px;
+    font-size: 0.6rem;
+  }
+
+  .watch:hover {
+    background-color: rgb(158, 2, 2);
+  }
+
+  .favorite:hover {
+    background-color: rgb(70, 70, 70);
+  }
+
+  .rating {
+    color: rgb(238, 216, 108);
+  }
+
+  .arrows{
+    position: absolute;
+    bottom: 20%;
+    right: 5rem;
+    z-index: 100;
+    display: flex;
+    gap: 1rem;
+}
+.arrows button{
+    background-color: rgba(142, 142, 142, 0.333);
+    border: none;
+    font-family: monospace;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: x-large;
+    color: #eee;
+    transition: .5s;
+}
+.arrows button:hover{
+    background-color: #eee;
+    color: black;
+}
+
+  .image-details {
+    height: 80vh;
+    filter: blur(0.4rem);
+    opacity: 0.8;
+    background-repeat: no-repeat;
+  }
+
+  .details{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background: none;
+    position: absolute;
+    top: 19%;
+    left: 5%;
+    align-items: center;
+  }
+
+  .details-content {
+    color: rgb(255, 255, 255);
+  }
+
+  .details-content p {
+    width: 500px;
+  }
+
+  .details img{
+    border-radius: 0.5rem;
+    box-shadow: 11px 16px 57px -6px rgba(0,0,0,0.75);
+    width: 300px;
+  }
+
+  .tag {
+    margin: 0 0.5rem;
+    padding: 0 1rem;
+    color: white;
+  }
+
+  .movie-specific .movie-content {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .companies-details {
+    justify-content: center;
+  }
+
+  footer {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+    margin: 5rem 1rem 1rem 1rem;
+    text-align: center;
+    color: white;
+    justify-content: center;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .footer-content{
+    font-size: 0.6rem;
+  }
+  footer img {
+    border-radius: 1rem;
+    width: 100px;
+  }
+
+  .page {
+    width: 100%;
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+  }
+
+  .page a:hover{
+    color: red;
+  }
+  
+
+  @media screen and (min-width:767px) and (max-width:1023px){
+      .movie-btn{
+          width: 80px;
+          height: 40px;
+      }
+      .image-container{
+        height: 50vh;
+      }
+      .details{ 
+        flex-direction: column;
+        width: 80%;
+        left: 11%;
+      }
+
+      .details-content p {
+        width: 500px;
+      }
+
+      .details-content h2 {
+        text-align: center;
+        width: 500px;
+      }
+
+      .genre-details {
+        display: flex;
+        justify-content: center;
+      }
+
+  }
+
+  @media screen and (max-width:676px){
+      nav ul {
+          display: none; 
+      }
+
+      .menu-icon {
+          display: flex;
+          cursor: pointer;
+          flex-direction: column;
+          justify-content: center;
+      }
+
+      .show {
+          display: flex;
+          flex-direction: column;
+      }
+
+      .movie-btn{
+          text-align: center;
+          font-size: 0.8rem;
+          width: 60px;
+          height: 30px;
+      }
+      .arrows{
+        bottom: 90%;
+        right: 1rem;
+      }
+
+      .title {
+        width: 300px;
+        font-size: 2rem;
+      }
+      .genre-and-rating {
+        font-size: 1rem;
+      }
+      .content {
+        gap: 2rem;
+        width: 100%;
+        height: 25vh;
+        padding:1rem;
+      }
+
+      .desc {
+        width: 350px;
+        font-size: 0.8rem;
+      }
+      footer {
+          gap: 0;
+          flex-direction: column;
+      }
+
+      .footer-content {
+        width: 200px;
+      }
+
+      .movie-action {
+        width: 150px;
+      }
+
+      .movie-btn {
+        width: 75px;
+        font-size: 0.5rem;
+      }
+
+      .movie-specific .card-container {
+        width: 115px;
+      }
+      .movie-specific .movie-content {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        overflow: hidden;
+      }
+
+    .details{
+    flex-direction: column;  
+    width: 60%;
+    top: 15%;
+    left: 21%;
+    align-items: center;
+    }
+
+    .details-content p {
+      width: 300px;
+      font-size: 0.8rem;
+    }
+
+    .details-content h2 {
+      font-size: 1rem;
+    }
+
+    .details-content i {
+      font-size: 0.8rem;
+    }
+
+    .details img{
+      width: 200px;
+    }
+   .companies-details{
+      flex-direction: column;
+      align-items: center;
+    }
+  }
